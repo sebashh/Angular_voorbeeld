@@ -1,0 +1,12 @@
+<h1 *ngIf="!member">
+  Loading...
+</h1>
+<div class="row">
+  <div class="col-12">
+    <nav mat-tab-nav-bar>
+      <a mat-tab-link routerLink="./" label="Loten" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Loten Bekijken</a>
+      <a mat-tab-link routerLink="./uitlenen" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" label="Leden">Loten toewijzen</a>
+    </nav>
+    <router-outlet></router-outlet>
+  </div>
+</div>

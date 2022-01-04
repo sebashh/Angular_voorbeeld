@@ -1,0 +1,21 @@
+<div class="col d-flex justify-content-end mt-2">
+  <button (click)="openCreateModal()" class="btn btn-primary" type="button">Lot toevoegen</button>
+</div>
+<table class="table" width="50%">
+  <thead>
+  <tr>
+    <th>Lotnummer</th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor = "let ticket of ticketList">
+    <td>{{ticket.bookNumber}}</td>
+    <td> </td>
+    <td>
+      <button class="btn btn-danger" (click)="deleteTicket(ticket.id, this.groupId)">Verwijder</button>
+    </td>
+  </tr>
+  </tbody>
+</table>

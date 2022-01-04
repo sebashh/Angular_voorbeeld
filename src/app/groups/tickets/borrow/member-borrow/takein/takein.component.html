@@ -1,0 +1,16 @@
+<div class="mt-3 mb-3" *ngIf="borrows.length > 0; else memberDoesNotHaveTickets">
+  <h3>Huidige loten van dit lid</h3>
+
+  <app-selectable-borrows [borrows]="borrows" (selectedBorrowsChange)="onSelectChange($event)"></app-selectable-borrows>
+  <div class="row">
+    <div class="col-12">
+      <button class="btn btn-warning btn-sm float-"
+              type="button"
+              [disabled]="buttonDisabled"
+              (click)="onSubmit()">Innemen</button>
+    </div>
+  </div>
+</div>
+<ng-template #memberDoesNotHaveTickets>
+  <p class="mt-2">Dit lid heeft nog geen loten toegewezen gekregen</p>
+</ng-template>

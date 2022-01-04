@@ -1,0 +1,40 @@
+<div class="modal-header">
+  <h2 class="modal-title">Nieuwe groep</h2>
+</div>
+<div class="modal-body">
+  <form [formGroup]="formNewGroup" (ngSubmit)="onSubmitNewGroup()">
+
+    <div class="row">
+      <div class="col-md-12" style="margin-bottom: 10px;"><label class="form-label"><strong>Groepsnaam</strong></label>
+        <input formControlName="groupName" class="form-control" type="text" name="groupName" [ngClass]="{ 'is-invalid': submitted && gNew.groupName.errors }" />
+        <div *ngIf="submitted && gNew.groupName.errors" class="invalid-feedback">
+          <div *ngIf="gNew.groupName.errors.required">Groepsnaam is verplicht</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12" style="margin-bottom: 10px;"><label class="form-label"><strong>Beschrijving</strong></label>
+        <input formControlName="description" class="form-control" type="text" [ngClass]="{ 'is-invalid': submitted && gNew.description.errors }" />
+        <div *ngIf="submitted && gNew.description.errors" class="invalid-feedback">
+          <div *ngIf="gNew.description.errors.required">Omschrijving is verplicht</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12" style="margin-bottom: 10px;"><label class="form-label"><strong>Ticketprijs</strong></label>
+        <input formControlName="ticketPrice" class="form-control" type="number" [ngClass]="{ 'is-invalid': submitted && gNew.ticketPrice.errors }" />
+        <div *ngIf="submitted && gNew.ticketPrice.errors" class="invalid-feedback">
+          <div *ngIf="gNew.ticketPrice.errors.required">Ticketprijs is verplicht</div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+  <button class="btn btn-light" type="button" (click)="closeModal()">Sluiten</button>
+  <button class="btn btn-primary" type="submit">Aanmaken</button>
+</div>
+  </form>
+</div>
+
+

@@ -1,0 +1,26 @@
+<div class="col" style="text-align: right; border-radius: 16px;">
+  <button (click)="openNewMemberModal()"
+          class="btn btn-primary mt-2"
+          type="button">Lid toevoegen</button>
+</div>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Lid</th>
+      <th>Betaald</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let member of members">
+      <td>{{member.firstName}} {{member.lastName}}</td>
+      <td>&euro;&nbsp;{{member.payed | number: '1.2-2'}}</td>
+      <td>
+        <button id="editButton" class="btn btn-light" (click)="openModalEdit('edit member', member)">Wijzig</button>
+        <button class="btn btn-danger" (click)="deleteMember(groupId ,member.id)">Verwijder</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

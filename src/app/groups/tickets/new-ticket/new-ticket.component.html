@@ -1,0 +1,21 @@
+<div class="modal-header">
+  <h4 class="modal-title">Nieuw Lot</h4>
+</div>
+<div class="modal-body">
+  <form [formGroup]="newTicketForm" (ngSubmit)="addTicket()">
+
+    <div class="row">
+      <div class="col-md-12" style="margin-bottom: 10px;"><label class="form-label"><strong>Boek Nummer</strong></label>
+        <input formControlName="bookNumber" class="form-control" type="text" name="groupName">
+      </div>
+    </div>
+
+
+    <div class="modal-footer">
+      <button class="btn btn-light" type="button" (click)="closeModal()">Sluiten</button>
+      <button class="btn btn-primary">Toevoegen</button>
+    </div>
+  </form>
+</div>
+
+

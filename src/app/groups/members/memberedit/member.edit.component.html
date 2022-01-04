@@ -1,0 +1,41 @@
+<div class="modal-header">
+  <h2 class="modal-title">Wijzigen lid</h2>
+</div>
+<div class="modal-body">
+  <form [formGroup]="formEditMember" (ngSubmit)="onSubmitEditMember()">
+
+    <div class="row">
+      <div class="col-md-12" style="margin-bottom: 10px;"><label class="form-label"><strong>Groepsnaam</strong></label>
+        <input formControlName="firstName" class="form-control" type="text" name="firstName" [ngClass]="{ 'is-invalid': submitted && mEdit.firstName.errors }" />
+        <div *ngIf="submitted && mEdit.firstName.errors" class="invalid-feedback">
+          <div *ngIf="mEdit.firstName.errors.required">Voornaam is verplicht</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12" style="margin-bottom: 10px;"><label class="form-label"><strong>Beschrijving</strong></label>
+        <input formControlName="lastName" class="form-control" type="text" [ngClass]="{ 'is-invalid': submitted && mEdit.lastName.errors }" />
+        <div *ngIf="submitted && mEdit.lastName.errors" class="invalid-feedback">
+          <div *ngIf="mEdit.lastName.errors.required">Achternaam is verplicht</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12" style="margin-bottom: 10px;"><label class="form-label"><strong>Ticketprijs</strong></label>
+        <input formControlName="payed" class="form-control" type="number" [ngClass]="{ 'is-invalid': submitted && mEdit.payed.errors }" />
+        <div *ngIf="submitted && mEdit.payed.errors" class="invalid-feedback">
+          <div *ngIf="mEdit.payed.errors.required">Aantal gekocht is verplicht</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn btn-light" type="button" (click)="closeModal()">Sluiten</button>
+      <button class="btn btn-primary" type="submit">Opslaan</button>
+    </div>
+  </form>
+</div>
+
+

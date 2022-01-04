@@ -1,0 +1,31 @@
+<div
+  class="d-flex flex-column justify-content-center align-items-center align-items-md-center align-items-lg-center card-body"
+  style="padding-top: 0;padding-right: 0;padding-bottom: 0;padding-left: 0;min-height: 100%;">
+  <h2 class="text-start">Loterij login</h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="d-inline-flex flex-column align-items-center form-inline" style="padding: 10px;min-width: 250px;">
+    <div class="form-group">
+      <input formControlName="email" class="form-control" type="email" name="email" placeholder="Email address"
+             inputmode="email" autocomplete="on"
+             [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+        <div *ngIf="f.email.errors.required">Email is verplicht</div>
+        <div *ngIf="f.email.errors.email">Email bestaat niet</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <input formControlName="password" class="form-control" type="password" name="password" placeholder="*********"
+             style="margin-top: 15px;" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+        <div *ngIf="f.password.errors.required">Password is verplicht</div>
+      </div>
+    </div>
+    <div class="form-row" style="margin-top: 15px">
+        <button class="btn btn-primary">
+          Login
+        </button>
+    </div>
+    <small class="form-text">or</small>
+    <a routerLink='../register' style="font-family: Arial;   font-size: 15px">Registreer hier</a>
+  </form>
+  <input class="form-control-plaintext" type="button" value="Forgot Username / Password?" readonly="" style="text-align: center;font-size: 12px;color: rgb(150,157,164);transform: perspective(1520px);min-width: 200px;">
+</div>

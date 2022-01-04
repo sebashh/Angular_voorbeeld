@@ -1,0 +1,20 @@
+.login-card {
+  border: 0;
+  border-radius: 10.5px;
+  box-shadow: 0 10px 30px 0 rgb(255 169 77 / 30%);
+  overflow: hidden;
+}
+
+.container {
+  max-width: 600px;
+}
+
+@media (max-width: 575.98px) {
+  .container {
+    max-width: 300px;
+  }
+
+  h2 {
+    padding-top: 10px;
+  }
+}
